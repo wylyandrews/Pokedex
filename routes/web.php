@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PagesController@home');
+
+Route::get('/login', 'PagesController@login');
+
+Route::get('/pokemon', 'PagesController@viewPokemon');
+
+//Route::get('/import', 'PagesController@import');
+
+//Route::post('/import/importAction', 'PagesController@importAction');

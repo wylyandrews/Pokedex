@@ -64,6 +64,17 @@
         </style>
     </head>
     <body>
+    <ul class="nav navbar-nav pull-right">
+      <li class="{{ Request::is('/') ? 'active' : '' }}">
+         <a href="{{ url('/') }}">Home</a>
+     </li>
+      <li class="{{ Request::is('login') ? 'active' : '' }}">
+         <a href="{{ url('/login') }}">Login</a>
+     </li>
+      <li class="{{ Request::is('pokemon') ? 'active' : '' }}">
+         <a href="{{ url('/pokemon') }}">Pokemon</a>
+      </li>
+    </ul> 
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">

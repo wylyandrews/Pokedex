@@ -1,5 +1,4 @@
-"id","name","types","height","weight","abilities","egg_groups","stats","genus","description"
-1,"Bulbasaur","[""poison"", ""grass""]",7.00,69.00,"[""chlorophyll"", ""overgrow""]","[""plant"", ""monster""]","{""hp"": 45, ""speed"": 45, ""attack"": 49, ""defense"": 49, ""special-attack"": 65, ""special-defense"": 65}","Seed Pokémon","Bulbasaur can be seen napping in bright sunlight.
+﻿1,"Bulbasaur","[""poison"", ""grass""]",7.00,69.00,"[""chlorophyll"", ""overgrow""]","[""plant"", ""monster""]","{""hp"": 45, ""speed"": 45, ""attack"": 49, ""defense"": 49, ""special-attack"": 65, ""special-defense"": 65}","Seed Pokémon","Bulbasaur can be seen napping in bright sunlight.
 There is a seed on its back. By soaking up the sun’s rays,
 the seed grows progressively larger."
 2,"Ivysaur","[""poison"", ""grass""]",10.00,130.00,"[""chlorophyll"", ""overgrow""]","[""plant"", ""monster""]","{""hp"": 60, ""speed"": 60, ""attack"": 62, ""defense"": 63, ""special-attack"": 80, ""special-defense"": 80}","Seed Pokémon","There is a bud on this Pokémon’s back. To support its weight,

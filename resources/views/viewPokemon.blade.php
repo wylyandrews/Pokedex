@@ -4,10 +4,13 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Pokedex</title>
+        <title>View Pokemon</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+
+        <!-- bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
 
         <!-- Styles -->
         <style>
@@ -42,6 +45,7 @@
 
             .content {
                 text-align: center;
+                height 80%;
             }
 
             .title {
@@ -60,6 +64,10 @@
 
             .m-b-md {
                 margin-bottom: 30px;
+            }
+
+            table {
+                overflow: scroll;
             }
         </style>
     </head>
@@ -92,14 +100,36 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Pokedex
+                    Pokemon
                 </div>
-
-                <ul>
-                    @foreach($tasks as $task)
-                        <li><?= $task; ?></li>
-                    @endforeach
-                </ul>
+                <div id="tableDiv" style="width: 90%;margin: 5%;">
+                    <table class="table table-striped table-bordered">
+                        <tr>
+                            <th>id</th>
+                            <th>name</th>
+                            <th>types</th>
+                            <th>height</th>
+                            <th>weight</th>
+                            <th>abilities</th>
+                            <th>egg groups</th>
+                            <th>stats</th>
+                            <th>genus</th>
+                            <th colspan="3">description</th>
+                        </tr>
+                        <?php
+                            //$results = DB::select('select * from pokemon where id = ?', [1]);
+                            //echo $results[0];
+                            $pokemonEntries = DB::select('select * FROM pokemon WHERE id <= 2');
+                            foreach($pokemonEntries as $pokemonEntry) {
+                                echo "<tr>";
+                                foreach($pokemonEntry as $key=>$value) {
+                                    echo "<td>$value</td>";
+                                }
+                                echo "</tr>";
+                            }
+                        ?>
+                    </table>
+                </div>
             </div>
         </div>
     </body>

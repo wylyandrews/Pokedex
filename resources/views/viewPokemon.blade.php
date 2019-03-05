@@ -45,7 +45,7 @@
 
             .content {
                 text-align: center;
-                height 80%;
+                height: 80%;
             }
 
             .title {
@@ -102,7 +102,7 @@
                 <div class="title m-b-md">
                     Pokemon
                 </div>
-                <div id="tableDiv" style="width: 90%;margin: 5%;">
+                <div class="container col-sm-9">
                     <table class="table table-striped table-bordered">
                         <tr>
                             <th>id</th>
@@ -119,10 +119,11 @@
                         <?php
                             //$results = DB::select('select * from pokemon where id = ?', [1]);
                             //echo $results[0];
-                            $pokemonEntries = DB::select('select * FROM pokemon WHERE id <= 2');
+                            $pokemonEntries = DB::select('select * FROM pokemon ');
                             foreach($pokemonEntries as $pokemonEntry) {
-                                echo "<tr>";
+                                echo "<tr colspan='6'>";
                                 foreach($pokemonEntry as $key=>$value) {
+                                   //if ($key == "stats") { echo "<td colspan='>hello!;} 
                                     echo "<td>$value</td>";
                                 }
                                 echo "</tr>";

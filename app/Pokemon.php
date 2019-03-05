@@ -1,0 +1,17 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Pokemon extends Model
+{
+    protected $fillable = [
+        'name',
+        'height',
+        'weight',
+        'genus',
+        'description',
+        'created_at'
+      ];
+}

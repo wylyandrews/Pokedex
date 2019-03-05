@@ -28,6 +28,10 @@ class PagesController extends Controller
         return view('viewPokemon');
     }
 
+    public function viewAsJson()
+    {
+        return view('viewAsJson');
+    }
 
     /* requres importAction which is currently broken
     public function import()

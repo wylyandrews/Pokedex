@@ -74,6 +74,9 @@
       <li class="{{ Request::is('pokemon') ? 'active' : '' }}">
          <a href="{{ url('/pokemon') }}">Pokemon</a>
       </li>
+      <li class="{{ Request::is('json') ? 'active' : '' }}">
+         <a href="{{ url('/json') }}">JSON</a>
+      </li>
     </ul> 
         <div class="flex-center position-ref full-height">
             <div class="content">

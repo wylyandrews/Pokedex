@@ -82,21 +82,12 @@
       <li class="{{ Request::is('pokemon') ? 'active' : '' }}">
          <a href="{{ url('/pokemon') }}">Pokemon</a>
       </li>
+      <li class="{{ Request::is('json') ? 'active' : '' }}">
+         <a href="{{ url('/json') }}">JSON</a>
+      </li>
     </ul> 
+    
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
 
             <div class="content">
                 <div class="title m-b-md">
@@ -117,13 +108,10 @@
                             <th colspan="3">description</th>
                         </tr>
                         <?php
-                            //$results = DB::select('select * from pokemon where id = ?', [1]);
-                            //echo $results[0];
                             $pokemonEntries = DB::select('select * FROM pokemon ');
                             foreach($pokemonEntries as $pokemonEntry) {
                                 echo "<tr colspan='6'>";
                                 foreach($pokemonEntry as $key=>$value) {
-                                   //if ($key == "stats") { echo "<td colspan='>hello!;} 
                                     echo "<td>$value</td>";
                                 }
                                 echo "</tr>";

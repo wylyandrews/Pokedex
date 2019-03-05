@@ -4,10 +4,13 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Log-in</title>
+        <title>View Pokemon</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+
+        <!-- bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
 
         <!-- Styles -->
         <style>
@@ -42,6 +45,7 @@
 
             .content {
                 text-align: center;
+                height: 80%;
             }
 
             .title {
@@ -61,6 +65,10 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            table {
+                overflow: scroll;
+            }
         </style>
     </head>
     <body>
@@ -79,24 +87,17 @@
       </li>
     </ul> 
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
 
             <div class="content">
                 <div class="title m-b-md">
-                    Log-in
+                    JSON
                 </div>
+                <p style="width:80%; margin:10%; text-align: left;">
+                <?php
+                    $pokemonEntries = DB::select('select * FROM pokemon ');
+                    echo json_encode($pokemonEntries);
+                ?>
+                </p>
             </div>
         </div>
     </body>

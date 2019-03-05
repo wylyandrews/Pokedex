@@ -17,6 +17,7 @@ Route::get('/login', 'PagesController@login');
 
 Route::get('/pokemon', 'PagesController@viewPokemon');
 
+Route::get('/json', 'PagesController@viewAsJson');
 //Route::get('/import', 'PagesController@import');
 
 //Route::post('/import/importAction', 'PagesController@importAction');
